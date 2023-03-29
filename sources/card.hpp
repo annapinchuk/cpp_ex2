@@ -12,11 +12,11 @@ namespace ariel
     
     public: // Access specifier
         // Constructor
-        Card(int val, int typ, bool fu)
+        Card(int xy, int pl)
         {
-            value = val;
-            type = typ;
-            is_faceUp = fu;
+            value = xy;
+            type = pl;
+            is_faceUp = false;
         }
         // Getters
         int getValue()

@@ -4,33 +4,43 @@ using namespace std;
 #include "card.hpp"
 namespace ariel
 {
-class Player {     // The class
-  private:          // Access specifier
+  class Player
+  {        // The class
+  private: // Access specifier
     string name;
     vector<Card> cards;
     int cardes_Taken;
     bool is_playing;
-  public:           // Access specifier
+    int id = 0;
+
+  public: // Access specifier
     // Constructor
-    Player(string p_name){ 
+    Player(string p_name)
+    {
       name = p_name;
       cardes_Taken = 0;
       is_playing = true;
+      id++;
     }
-    // Default Constructor   
-    Player(){ 
-      name = "stranger";
+    // Default Constructor
+    Player()
+    {
+      id++;
+      name = "stranger" + to_string(id); // unique name
       cardes_Taken = 0;
       is_playing = true;
-    }    
-    int stacksize(){
+    }
+    int stacksize()
+    {
       return cards.size();
     }
-    int cardesTaken(){
+    int cardesTaken()
+    {
       return cardes_Taken;
     }
-    void addCard(Card card){
+    void addCard(Card card)
+    {
       cards.push_back(card);
     }
-};
+  };
 }
