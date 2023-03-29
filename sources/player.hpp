@@ -30,6 +30,7 @@ namespace ariel
       cardes_Taken = 0;
       is_playing = false;
     }
+    // Getters
     int stacksize()
     {
       return cards.size();
@@ -42,6 +43,7 @@ namespace ariel
     {
       cards.push_back(card);
     }
+    // Setters
     bool isPlaying()
     {
       return is_playing;

@@ -1,18 +1,19 @@
 
 
-
 #pragma ONCE
 
 namespace ariel
 {
-class Game { 
-  private:          // Access specifier
+  class Game
+  {
+  private: // Access specifier
     Player player1;
     Player player2;
-      // The class
-  public:           // Access specifier
+    // The class
+  public: // Access specifier
     // Constructor
-    Game(Player p1,Player p2){
+    Game(Player p1, Player p2)
+    {
       player1 = p1;
       player2 = p2;
     }
@@ -24,6 +25,5 @@ class Game {
     void printWiner();
     void printLog();
     void printStats();
-
-};
+  };
 }
