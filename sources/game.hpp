@@ -2,6 +2,7 @@
 
 
 #pragma ONCE
+
 namespace ariel
 {
 class Game { 

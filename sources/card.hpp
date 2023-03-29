@@ -1,4 +1,6 @@
 #pragma ONCE
+#ifndef CARD_HPP
+#define CARD_HPP
 namespace ariel
 {
     class Card
@@ -36,3 +38,5 @@ namespace ariel
 
     };
 }
+
+#endif
