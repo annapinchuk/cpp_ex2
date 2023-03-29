@@ -19,7 +19,7 @@ namespace ariel
     {
       name = p_name;
       cardes_Taken = 0;
-      is_playing = true;
+      is_playing = false;
       id++;
     }
     // Default Constructor
@@ -28,7 +28,7 @@ namespace ariel
       id++;
       name = "stranger" + to_string(id); // unique name
       cardes_Taken = 0;
-      is_playing = true;
+      is_playing = false;
     }
     int stacksize()
     {
@@ -41,6 +41,10 @@ namespace ariel
     void addCard(Card card)
     {
       cards.push_back(card);
+    }
+    bool isPlaying()
+    {
+      return is_playing;
     }
   };
 }
