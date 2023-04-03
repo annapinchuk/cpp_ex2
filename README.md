@@ -38,3 +38,4 @@
 
 בהצלחה
 </div>
+<img src="https://github.com/annapinchuk/cpp_ex2/blob/main/bash_grade100.png">
