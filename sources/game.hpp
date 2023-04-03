@@ -12,11 +12,7 @@ namespace ariel
     // The class
   public: // Access specifier
     // Constructor
-    Game(Player p1, Player p2)
-    {
-      player1 = p1;
-      player2 = p2;
-    }
+    Game(Player p1, Player p2);
     void playTurn();
     void printLastTurn();
     void stacksize();

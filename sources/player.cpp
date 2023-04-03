@@ -1,0 +1,59 @@
+// Author: Anna Pinchuk
+// Date: 29/03/2023
+// Description: This file contains the war game.
+// In test driven development, we write the tests first, and then we write the code.
+// credit to: course staff for the demo file, and the functions' descriptions.To copilot for helping with the comments.
+
+using namespace std;
+#include "card.hpp"
+#include "player.hpp"
+#include <vector>
+#include <string>
+#include <iostream>
+#include <stdexcept>
+using namespace ariel;
+class Player
+{        // The class
+private: // Access specifier
+    string name;
+    vector<Card> cards;
+    int cardes_Taken;
+    bool is_playing;
+    int id = 0;
+
+public: // Access specifier
+    // Constructor
+    Player::Player(string p_name)
+    {
+        name = p_name;
+        cardes_Taken = 0;
+        is_playing = false;
+        id++;
+    }
+    // Default Constructor
+    Player::Player()
+    {
+        id++;
+        name = "stranger" + to_string(id); // unique name
+        cardes_Taken = 0;
+        is_playing = false;
+    }
+    // Getters
+    int stacksize()
+    {
+        return cards.size();
+    }
+    int cardesTaken()
+    {
+        return cardes_Taken;
+    }
+    void addCard(Card card)
+    {
+        cards.push_back(card);
+    }
+    // Setters
+    bool isPlaying()
+    {
+        return is_playing;
+    }
+};

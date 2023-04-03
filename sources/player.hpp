@@ -15,38 +15,14 @@ namespace ariel
 
   public: // Access specifier
     // Constructor
-    Player(string p_name)
-    {
-      name = p_name;
-      cardes_Taken = 0;
-      is_playing = false;
-      id++;
-    }
+    Player(string p_name);
     // Default Constructor
-    Player()
-    {
-      id++;
-      name = "stranger" + to_string(id); // unique name
-      cardes_Taken = 0;
-      is_playing = false;
-    }
+    Player();
     // Getters
-    int stacksize()
-    {
-      return cards.size();
-    }
-    int cardesTaken()
-    {
-      return cardes_Taken;
-    }
-    void addCard(Card card)
-    {
-      cards.push_back(card);
-    }
+    int stacksize();
+    int cardesTaken();
+    void addCard(Card card);
     // Setters
-    bool isPlaying()
-    {
-      return is_playing;
-    }
+    bool isPlaying();
   };
 }

@@ -12,30 +12,13 @@ namespace ariel
 
     public: // Access specifier
         // Constructor
-        Card(int xy, int pl)
-        {
-            value = xy;
-            type = pl;
-            is_faceUp = false;
-        }
+        Card(int xy, int pl);
         // Getters
-        int getValue()
-        {
-            return value;
-        }
-        int getType()
-        {
-            return type;
-        }
-        bool getIsFaceUp()
-        {
-            return is_faceUp;
-        }
+        int getValue();
+        int getType();
+        bool getIsFaceUp();
         // Setters
-        void flip()
-        {
-            is_faceUp = !is_faceUp;
-        }
+        void flip();
     };
 }
 
