@@ -11,7 +11,9 @@ namespace ariel
     vector<Card> cards;
     int cardes_Taken;
     bool is_playing;
-    int id = 0;
+    int id;
+    int numwingames;
+    int drawrate;
 
   public: // Access specifier
     // Constructor
@@ -20,6 +22,8 @@ namespace ariel
     Player();
     // Getters
     int stacksize();
+    int removecard();
+    string getName();
     int cardesTaken();
     void addCard(Card card);
     // Setters
