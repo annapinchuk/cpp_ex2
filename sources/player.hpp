@@ -22,7 +22,9 @@ namespace ariel
     Player();
     // Getters
     int stacksize();
+    int getNumWin();
     int removecard();
+    int getDrawRate();
     string getName();
     int cardesTaken();
     void addCard(Card card);

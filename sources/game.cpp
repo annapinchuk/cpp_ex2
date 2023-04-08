@@ -19,7 +19,7 @@ private: // Access specifier
     string log;
     string lasturn;
 
- // The class
+    // The class
 public: // Access specifier
     // Constructor
     Game::Game(Player p1, Player p2)
@@ -75,12 +75,10 @@ public: // Access specifier
         }
         else if (v1 > v2)
         {
-        
         }
         // v1 < v2
         else
         {
-           
         }
         cout << "playTurn" << endl;
     }
@@ -95,13 +93,13 @@ public: // Access specifier
     {
         for (int i = 0; i < 5; i++)
         {
-            this->playTurn();   
+            this->playTurn();
         }
         cout << "playAll" << endl;
     }
     // print the winner
     void Game::printWiner()
-    {   
+    {
         if (this->player1.stacksize() > this->player2.stacksize())
         {
             cout << this->player1.getName() << " is the winner!" << endl;
@@ -123,6 +121,8 @@ public: // Access specifier
     }
     void Game::printStats()
     {
+        cout << this->player1.getName() << " has " << this->player1.getNumWin() << " win rate, " << this->player1.cardesTaken() << " cards won, " << this->player1.getDrawRate() << " drew rate" << endl;
+        cout << this->player2.getName() << " has " << this->player2.getNumWin() << " win rate, " << this->player2.cardesTaken() << " cards won, " << this->player2.getDrawRate() << " drew rate" << endl;
         cout << "printStats" << endl;
     }
 };

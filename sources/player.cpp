@@ -85,4 +85,8 @@ public: // Access specifier
     {
         numwingames++;
     }
+    void draw()
+    {
+        drawrate++;
+    }
 };
