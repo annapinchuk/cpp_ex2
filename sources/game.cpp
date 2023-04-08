@@ -1,7 +1,12 @@
+// Author: Anna Pinchuk
+// Date: 13/04/2023
+// Description: This file contains the war game.
+// In test driven development, we write the tests first, and then we write the code.
+// credit to: course staff for the demo file, and the functions' descriptions.To copilot for helping with the comments.
+
 #pragma ONCE
 #include <iostream>
 #include "player.hpp"
-
 #include "game.hpp"
 #include "card.hpp"
 using namespace ariel;
