@@ -30,9 +30,51 @@ public: // Access specifier
     {
         return value;
     }
-    int getType()
+    string getType()
     {
-        return type;
+        if (type == 1)
+        {
+            return "spades";
+        }
+        else if (type == 2)
+        {
+            return "hearts";
+        }
+        else if (type == 3)
+        {
+            return "diamonds";
+        }
+        else if (type == 4)
+        {
+            return "clubs";
+        }
+        else
+        {
+            return "null";
+        }
+    }
+    string getValueString()
+    {
+        if (value == 1)
+        {
+            return "Ace";
+        }
+        else if (value == 11)
+        {
+            return "Jack";
+        }
+        else if (value == 12)
+        {
+            return "Queen";
+        }
+        else if (value == 13)
+        {
+            return "King";
+        }
+        else
+        {
+            return to_string(value);
+        }
     }
     bool getIsFaceUp()
     {

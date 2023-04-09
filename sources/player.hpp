@@ -26,7 +26,7 @@ namespace ariel
     // Getters
     int stacksize();
     int getNumWin();
-    int removecard();
+    Card removecard();
     int getDraw();
     int getNumGames();
     string getName();
@@ -35,6 +35,7 @@ namespace ariel
     bool isPlaying();
     // Setters
     void setPlaying();
+    void addCardsTaken(int num);
     void addWin();
     void addDraw();
     void addGame();

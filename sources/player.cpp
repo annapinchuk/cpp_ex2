@@ -47,17 +47,19 @@ public: // Access specifier
         cout << "Player " << name << " is out of the game" << endl;
     }
     // Getters
-    int removecard()
+    Card removecard()
     {
         if (cards.size() == 0)
         {
-            return 0;
+            Card cardnull = Card(0, 0);
+
+            return cardnull;
         }
         else
         {
             Card card = cards.back();
             cards.pop_back();
-            return card.getValue();
+            return card;
         }
     }
     int stacksize()
@@ -89,6 +91,10 @@ public: // Access specifier
         return is_playing;
     }
     // Setters
+    void addCardsTaken(int num)
+    {
+        cardes_Taken += num;
+    }
     void addCard(Card card)
     {
         cards.push_back(card);

@@ -17,7 +17,8 @@ namespace ariel
         ~Card();
         // Getters
         int getValue();
-        int getType();
+        string getValueString();
+        string getType();
         bool getIsFaceUp();
         // Setters
         void flip();

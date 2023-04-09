@@ -66,34 +66,70 @@ public: // Access specifier
     }
     void Game::playTurn()
     {
-        int v1 = this->player1.removecard();
-        int v2 = this->player2.removecard();
+        int cardscounter = 0; // count the number of cards in the war
+        Card v1 = this->player1.removecard();
+        Card v2 = this->player2.removecard();
+        cardscounter++;
+        // template: Alice played Queen of Hearts Bob played 5 of Spades. Alice wins.
+        this->lasturn = this->player1.getName() + " played " + v1.getValueString() + " of " + v1.getType() + " " + this->player1.getName() + " played " + v2.getValueString() + " of " + v2.getType() + ". ";
         // check if one of the players has no cards
-        if (v1 == 0 || v2 == 0)
+        if (v1.getValue() == 0 || v2.getValue() == 0)
         {
             return this->printWiner();
         }
-        // check if the cards are equal
-        else if (v1 == v2)
-        {
-            this->player1.addDraw();
-            this->player2.addDraw();
-        }
-        // check if the card is ace
-        else if (v1 == 1 && v2 != 2)
-        {
-        }
-        else if (v1 != 2 && v2 == 1)
-        {
-        }
-        else if (v1 > v2)
-        {
-        }
-        // v1 < v2
         else
         {
+            // check if the cards are equal
+            // war
+            while (v1.getValue() == v2.getValue())
+            {
+                this->lasturn += "Draw. ";
+                this->player1.addDraw();
+                this->player2.addDraw();
+                // war
+                // one card is faced down
+                Card v1 = this->player1.removecard();
+                Card v2 = this->player2.removecard();
+                cardscounter++;
+                // check if one of the players has no cards
+                if (v1.getValue() == 0 || v2.getValue() == 0)
+                {
+                    this->player1.addCardsTaken(cardscounter);
+                    this->player2.addCardsTaken(cardscounter);
+                    return this->printWiner();
+                }
+                else
+                {
+                    Card v1 = this->player1.removecard();
+                    Card v2 = this->player2.removecard();
+                }
+            }
+            // check if the card is ace
+            if (v1.getValue() == 1 && v2.getValue() != 2)
+            {
+
+                this->lasturn += this->player1.getName() + " wins.";
+                this->player1.addCardsTaken(cardscounter * 2); // add the cards to the player
+            }
+            else if (v1.getValue() != 2 && v2.getValue() == 1)
+            {
+                this->lasturn += this->player2.getName() + " wins.";
+                this->player2.addCardsTaken(cardscounter * 2); // add the cards to the player
+            }
+            else if (v1.getValue() > v2.getValue())
+            {
+                this->lasturn += this->player1.getName() + " wins.";
+                this->player1.addCardsTaken(cardscounter * 2); // add the cards to the player
+            }
+            // v1 < v2
+            else
+            {
+                this->lasturn += this->player2.getName() + " wins.";
+                this->player2.addCardsTaken(cardscounter * 2); // add the cards to the player
+            }
         }
-        cout << "playTurn" << endl;
+        this->log += this->lasturn + '\n';
+        cout << "EndOfTurn" << endl;
     }
     // print last turn
     void Game::printLastTurn()
@@ -113,12 +149,12 @@ public: // Access specifier
     // print the winner
     void Game::printWiner()
     {
-        if (this->player1.stacksize() > this->player2.stacksize())
+        if (this->player1.cardesTaken() > this->player2.cardesTaken())
         {
             this->player1.addWin();
             cout << this->player1.getName() << " is the winner!" << endl;
         }
-        else if (this->player1.stacksize() < this->player2.stacksize())
+        else if (this->player1.cardesTaken() < this->player2.cardesTaken())
         {
             this->player2.addWin();
             cout << this->player2.getName() << " is the winner!" << endl;
