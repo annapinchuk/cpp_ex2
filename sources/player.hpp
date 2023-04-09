@@ -14,6 +14,7 @@ namespace ariel
     int id;
     int numwingames;
     int drawrate;
+    int cardsWon;
     int numgames;
 
   public: // Access specifier
@@ -33,7 +34,9 @@ namespace ariel
     int cardesTaken();
     void addCard(Card card);
     bool isPlaying();
+    int getCardsWon();
     // Setters
+    void addCardsWon(int num);
     void setPlaying();
     void addCardsTaken(int num);
     void addWin();

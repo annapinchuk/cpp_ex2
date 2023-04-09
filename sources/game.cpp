@@ -32,6 +32,12 @@ public: // Access specifier
         this->player2.addGame();
         this->player1.setPlaying();
         this->player2.setPlaying();
+        // initialize number of cards taken by each player in unuque game
+        int temp  = this->player1.cardesTaken();
+        this->player1.addCardsTaken(-temp);
+        temp  = this->player2.cardesTaken();
+        this->player2.addCardsTaken(-temp);
+
         vector<Card> all;
         // create cards
         for (int i = 0; i < 14; i++)
@@ -134,7 +140,6 @@ public: // Access specifier
     // print last turn
     void Game::printLastTurn()
     {
-
         cout << this->lasturn << endl;
     }
     // play all turns
@@ -144,24 +149,25 @@ public: // Access specifier
         {
             this->playTurn();
         }
-        cout << "playAll" << endl;
     }
     // print the winner
     void Game::printWiner()
     {
+        this->player1.addCardsWon(this->player1.cardesTaken());
+        this->player2.addCardsWon(this->player2.cardesTaken());
         if (this->player1.cardesTaken() > this->player2.cardesTaken())
         {
             this->player1.addWin();
-            cout << this->player1.getName() << " is the winner!" << endl;
+            cout << this->player1.getName()<< endl;
         }
         else if (this->player1.cardesTaken() < this->player2.cardesTaken())
         {
             this->player2.addWin();
-            cout << this->player2.getName() << " is the winner!" << endl;
+            cout << this->player2.getName()<< endl;
         }
         else
         {
-            cout << "It's a tie!" << endl;
+            cout << "Tie!" << endl;
         }
     }
     // print the log
@@ -171,8 +177,7 @@ public: // Access specifier
     }
     void Game::printStats()
     {
-        cout << this->player1.getName() << " has " << (this->player1.getNumWin() / this->player1.getNumGames()) << " win rate, " << this->player1.cardesTaken() << " cards won, " << this->player1.getDraw() << " number of draws, " << (this->player1.getDraw() / (26 * this->player1.getNumGames())) << " drew rate" << endl;
-        cout << this->player2.getName() << " has " << (this->player2.getNumWin() / this->player2.getNumGames()) << " win rate, " << this->player2.cardesTaken() << " cards won, " << this->player2.getDraw() << " number of draws, " << (this->player2.getDraw() / (26 * this->player2.getNumGames())) << " drew rate" << endl;
-        cout << "printStats" << endl;
+        cout << this->player1.getName() << " has " << (this->player1.getNumWin() / this->player1.getNumGames()) << " win rate, " << this->player1.getCardsWon() << " cards won, " << this->player1.getDraw() << " number of draws, " << (this->player1.getDraw() / (26 * this->player1.getNumGames())) << " drew rate" << endl;
+        cout << this->player2.getName() << " has " << (this->player2.getNumWin() / this->player2.getNumGames()) << " win rate, " << this->player2.getCardsWon() << " cards won, " << this->player2.getDraw() << " number of draws, " << (this->player2.getDraw() / (26 * this->player2.getNumGames())) << " drew rate" << endl;
     }
 };

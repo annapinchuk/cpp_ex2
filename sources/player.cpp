@@ -16,6 +16,7 @@ private: // Access specifier
     int cardes_Taken;
     bool is_playing;
     int id = 0;
+    int cardsWon = 0;
     int numwingames = 0;
     int numdraw = 0;
     int numgames = 0;
@@ -62,6 +63,10 @@ public: // Access specifier
             return card;
         }
     }
+    int getCardsWon()
+    {
+        return cardsWon;
+    }
     int stacksize()
     {
         return cards.size();
@@ -91,6 +96,10 @@ public: // Access specifier
         return is_playing;
     }
     // Setters
+    void addCardsWon(int num)
+    {
+        cardsWon += num;
+    }
     void addCardsTaken(int num)
     {
         cardes_Taken += num;
