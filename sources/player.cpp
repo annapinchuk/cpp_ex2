@@ -42,7 +42,6 @@ public: // Access specifier
     // destructor
     Player::~Player()
     {
-        this->is_playing = false;
         this->cardes_Taken = 0;
         this->cards.clear();
         cout << "Player " << name << " is out of the game" << endl;
@@ -85,14 +84,18 @@ public: // Access specifier
     {
         return name;
     }
+    bool isPlaying()
+    {
+        return is_playing;
+    }
     // Setters
     void addCard(Card card)
     {
         cards.push_back(card);
     }
-    bool isPlaying()
+    void setPlaying()
     {
-        return is_playing;
+        is_playing = !is_playing;
     }
     void addWin()
     {

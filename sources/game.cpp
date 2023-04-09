@@ -30,8 +30,8 @@ public: // Access specifier
         player2 = p2;
         this->player1.addGame();
         this->player2.addGame();
-        this->player1.isPlaying();
-        this->player2.isPlaying();
+        this->player1.setPlaying();
+        this->player2.setPlaying();
         vector<Card> all;
         // create cards
         for (int i = 0; i < 14; i++)
@@ -60,6 +60,8 @@ public: // Access specifier
     // destructor
     Game::~Game()
     {
+        this->player1.setPlaying();
+        this->player2.setPlaying();
         cout << "Game is over" << endl;
     }
     void Game::playTurn()

@@ -32,8 +32,9 @@ namespace ariel
     string getName();
     int cardesTaken();
     void addCard(Card card);
-    // Setters
     bool isPlaying();
+    // Setters
+    void setPlaying();
     void addWin();
     void addDraw();
     void addGame();
