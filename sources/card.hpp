@@ -13,6 +13,8 @@ namespace ariel
     public: // Access specifier
         // Constructor
         Card(int xy, int pl);
+        //  destructor
+        ~Card();
         // Getters
         int getValue();
         int getType();

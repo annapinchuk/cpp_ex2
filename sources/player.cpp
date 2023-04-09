@@ -17,7 +17,8 @@ private: // Access specifier
     bool is_playing;
     int id = 0;
     int numwingames = 0;
-    int drawrate = 0;
+    int numdraw = 0;
+    int numgames = 0;
 
 public: // Access specifier
     // Constructor
@@ -37,6 +38,14 @@ public: // Access specifier
         cardes_Taken = 0;
         is_playing = false;
         vector<Card> cards;
+    }
+    // destructor
+    Player::~Player()
+    {
+        this->is_playing = false;
+        this->cardes_Taken = 0;
+        this->cards.clear();
+        cout << "Player " << name << " is out of the game" << endl;
     }
     // Getters
     int removecard()
@@ -64,9 +73,13 @@ public: // Access specifier
     {
         return numwingames;
     }
-    int getDrawRate()
+    int getDraw()
     {
-        return drawrate;
+        return numdraw;
+    }
+    int getNumGames()
+    {
+        return numgames;
     }
     string getName()
     {
@@ -81,12 +94,16 @@ public: // Access specifier
     {
         return is_playing;
     }
-    void win()
+    void addWin()
     {
         numwingames++;
     }
-    void draw()
+    void addDraw()
     {
-        drawrate++;
+        numdraw++;
+    }
+    void addGame()
+    {
+        numgames++;
     }
 };

@@ -19,6 +19,8 @@ namespace ariel
   public: // Access specifier
     // Constructor
     Game(Player p1, Player p2);
+    // destructor
+    ~Game();
     void playTurn();
     void printLastTurn();
     void playAll();

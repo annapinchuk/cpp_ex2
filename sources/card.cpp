@@ -20,6 +20,11 @@ public: // Access specifier
         type = pl;
         is_faceUp = false;
     }
+    //  destructor
+    ~Card()
+    {
+        cout << "Card is destroyed" << endl;
+    }
     // Getters
     int getValue()
     {
