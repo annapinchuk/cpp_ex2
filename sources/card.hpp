@@ -1,6 +1,8 @@
 #pragma ONCE
 #ifndef CARD_HPP
 #define CARD_HPP
+#include <string>
+using namespace std;
 namespace ariel
 {
     class Card
@@ -17,8 +19,8 @@ namespace ariel
         ~Card();
         // Getters
         int getValue();
-        string getValueString();
-        string getType();
+        std::string getValueString();
+        std::string getType();
         bool getIsFaceUp();
         // Setters
         void flip();

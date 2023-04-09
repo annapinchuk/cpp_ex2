@@ -23,7 +23,7 @@ private: // Access specifier
     // The class
 public: // Access specifier
     // Constructor
-    Game::Game(Player p1, Player p2)
+    Game(Player p1, Player p2)
     {
         log = "";
         lasturn = "";
@@ -60,18 +60,18 @@ public: // Access specifier
         // give cards to players
         for (int i = 0; i < 26; i++)
         {
-            player1.addCard(all[i]);
-            player2.addCard(all[i + 26]);
+            player1.addCard(all[(unsigned int)i]);
+            player2.addCard(all[(unsigned int)i + 26]);
         }
     }
     // destructor
-    Game::~Game()
+    ~Game()
     {
         this->player1.setPlaying();
         this->player2.setPlaying();
         cout << "Game is over" << endl;
     }
-    void Game::playTurn()
+    void playTurn()
     {
         int cardscounter = 0; // count the number of cards in the war
         Card v1 = this->player1.removecard();
@@ -139,12 +139,12 @@ public: // Access specifier
         cout << "EndOfTurn" << endl;
     }
     // print last turn
-    void Game::printLastTurn()
+    void printLastTurn()
     {
         cout << this->lasturn << endl;
     }
     // play all turns
-    void Game::playAll()
+    void playAll()
     {
         for (int i = 0; i < 5; i++)
         {
@@ -152,7 +152,7 @@ public: // Access specifier
         }
     }
     // print the winner
-    void Game::printWiner()
+    void printWiner()
     {
         this->player1.addCardsWon(this->player1.cardesTaken());
         this->player2.addCardsWon(this->player2.cardesTaken());
@@ -172,11 +172,11 @@ public: // Access specifier
         }
     }
     // print the log
-    void Game::printLog()
+    void printLog()
     {
         cout << this->log << endl;
     }
-    void Game::printStats()
+    void printStats()
     {
         cout << this->player1.getName() << " has " << (this->player1.getNumWin() / this->player1.getNumGames()) << " win rate, " << this->player1.getCardsWon() << " cards won, " << this->player1.getDraw() << " number of draws, " << (this->player1.getDraw() / (26 * this->player1.getNumGames())) << " drew rate" << endl;
         cout << this->player2.getName() << " has " << (this->player2.getNumWin() / this->player2.getNumGames()) << " win rate, " << this->player2.getCardsWon() << " cards won, " << this->player2.getDraw() << " number of draws, " << (this->player2.getDraw() / (26 * this->player2.getNumGames())) << " drew rate" << endl;

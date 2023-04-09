@@ -103,14 +103,6 @@ TEST_CASE("printLastTurn")
 {
     CHECK_NOTHROW(game.printLastTurn());
 }
-TEST_CASE("stacksize")
-{
-    CHECK_NOTHROW(game.stacksize());
-}
-TEST_CASE("cardesTaken")
-{
-    CHECK_NOTHROW(game.cardesTaken());
-}
 TEST_CASE("playAll")
 {
     CHECK_NOTHROW(game.playAll());

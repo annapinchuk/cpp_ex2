@@ -5,7 +5,8 @@
 // credit to: course staff for the demo file, and the functions' descriptions.To copilot for helping with the comments.
 
 #pragma ONCE
-
+#include <string>
+using namespace std;
 namespace ariel
 {
   class Game
@@ -13,8 +14,8 @@ namespace ariel
   private: // Access specifier
     Player player1;
     Player player2;
-    string log;
-    string lasturn;
+    std::string log;
+    std::string lasturn;
     // The class
   public: // Access specifier
     // Constructor

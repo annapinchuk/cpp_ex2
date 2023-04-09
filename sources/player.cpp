@@ -1,6 +1,3 @@
-
-
-using namespace std;
 #include "card.hpp"
 #include "player.hpp"
 #include <vector>
@@ -8,6 +5,7 @@ using namespace std;
 #include <iostream>
 #include <stdexcept>
 using namespace ariel;
+using namespace std;
 class Player
 {        // The class
 private: // Access specifier
@@ -23,7 +21,7 @@ private: // Access specifier
 
 public: // Access specifier
     // Constructor
-    Player::Player(string p_name)
+    Player(string p_name)
     {
         name = p_name;
         cardes_Taken = 0;
@@ -32,7 +30,7 @@ public: // Access specifier
         vector<Card> cards;
     }
     // Default Constructor
-    Player::Player()
+    Player()
     {
         id++;
         name = "stranger" + to_string(id); // unique name
@@ -41,7 +39,7 @@ public: // Access specifier
         vector<Card> cards;
     }
     // destructor
-    Player::~Player()
+    ~Player()
     {
         this->cardes_Taken = 0;
         this->cards.clear();
