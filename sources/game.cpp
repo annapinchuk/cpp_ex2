@@ -5,6 +5,7 @@
 // credit to: course staff for the demo file, and the functions' descriptions.To copilot for helping with the comments.
 
 #pragma ONCE
+#include <string>
 #include <iostream>
 #include "player.hpp"
 #include "game.hpp"

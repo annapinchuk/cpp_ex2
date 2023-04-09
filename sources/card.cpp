@@ -1,5 +1,6 @@
 #pragma ONCE
 #include <iostream>
+#include <string>
 #include "player.hpp"
 #include "game.hpp"
 #include "card.hpp"
